@@ -14,4 +14,3 @@
    - `npm start`
 6. Open a browser to `http://localhost:3000/`
 7. Win
-   tatus](https://travis-ci.org/Bitcoin-com/wormhole-scaffold-react.svg?branch=master)](https://travis-ci.org/Bitcoin-com/wormhole-scaffold-react)
