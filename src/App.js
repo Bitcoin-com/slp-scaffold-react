@@ -54,7 +54,14 @@ class App extends Component {
         let fin = [];
         console.log(list);
         list.forEach(token => {
-          fin.push(<li>{token.name !== "" ? token.name : token.id}</li>);
+          let path = "https://explorer.bitcoin.com/bch/tx/" + token.id;
+          fin.push(
+            <li>
+              <a href={path} target="_blank">
+                {token.name !== "" ? token.name : token.id}
+              </a>
+            </li>
+          );
         });
         this.setState({
           tokens: fin
@@ -69,10 +76,16 @@ class App extends Component {
     let addresses = [];
     for (let i = 0; i < 10; i++) {
       let account = masterHDNode.derivePath(`m/44'/145'/0'/0/${i}`);
+      let addy = SLP.HDNode.toCashAddress(account);
+      let slpAddy = SLP.Address.toSLPAddress(addy);
+      let path = "https://explorer.bitcoin.com/bch/address/" + addy;
       addresses.push(
         <li key={i}>
           m/44&rsquo;/145&rsquo;/0&rsquo;/0/
-          {i}: {SLP.HDNode.toCashAddress(account)}
+          {i}:{" "}
+          <a href={path} target="_blank">
+            {slpAddy}
+          </a>
         </li>
       );
     }
