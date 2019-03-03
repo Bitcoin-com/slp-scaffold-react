@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.png";
 
 import "./App.css";
-let SLPSDK = require("slp-sdk/lib/SLP").default;
+let SLPSDK = require("slp-sdk");
 let SLP = new SLPSDK();
 let langs = [
   "english",
